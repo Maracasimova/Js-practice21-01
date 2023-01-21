@@ -14,3 +14,17 @@
 *?      то вывести строку "Здравствуйте!"
 *?      иначе выводить строку "Неверный пароль!"
  */
+
+let login = prompt("Введите логин");
+if (!login) { // (login === null || login === " ")
+  console.log("Отменено");
+} else if (login === "Админ") {
+  let password = prompt("Введите пароль");
+  if (password === "Я главный") {
+    console.log("Здравствуйте!");
+  } else {
+    console.log("Неверный пароль!");
+  }
+} else {
+  console.log("Я вас не знаю");
+}
