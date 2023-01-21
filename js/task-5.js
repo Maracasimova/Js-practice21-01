@@ -16,7 +16,7 @@
  */
 
 let login = prompt("Введите логин");
-if (login === null || login === " ") {
+if (!login) { // (login === null || login === " ")
   console.log("Отменено");
 } else if (login === "Админ") {
   let password = prompt("Введите пароль");
