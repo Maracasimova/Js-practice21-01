@@ -10,3 +10,16 @@
  *! Делать проверку,что пользователь ввел именно число,
  *! а не произвольный набор символов, не нужно.
  */
+let initialNumber = Number (prompt("Введите число"));
+let totalAllNumbers = 0;
+let check = false;
+do {
+  if (initialNumber) {
+    totalAllNumbers += initialNumber;
+    initialNumber = Number (prompt("Введите число"));
+    check = true;
+  } else {
+    alert(`Общая сумма введенных чисел равна ${totalAllNumbers}`);
+    check = false;
+  }
+} while ((check = true));
