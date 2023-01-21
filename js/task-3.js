@@ -6,3 +6,9 @@
 
 const max = 50;
 const min = 23;
+
+for (let i = max; i >= min; i--) {
+    if (i % 2 === 0) {
+        console.log(i)
+    }
+}
