@@ -134,8 +134,35 @@
 // console.log(newTweets);
 
 
+//*====================================
 
 
+/**
+ *? Из объекта concerts нужно получить массив
+ *? в котором будут только имена городов.
+ *? Из массива нужно убрать города в которых концерт уже прошёл и
+ *? отсортировать их в хронологичном порядке.
+ *? Результат вывести в консоль.
+ *? Ожидаемый результат ["Умань", "Харків", "Одеса"]
+ */
 
+const concerts = {
+  Київ: new Date("2020-04-01"),
+  Умань: new Date("2023-07-02"),
+  Вінниця: new Date("2020-04-21"),
+  Одеса: new Date("2023-07-15"),
+  Хмельницький: new Date("2020-04-18"),
+  Харків: new Date("2023-07-10"),
+};
 
+const town = Object.keys(concerts);
+console.log(town);
 
+const townNew = town
+  .filter(item => (concerts[item] > new Date()))
+  .sort((a, b) => concerts[a] - concerts[b])
+
+console.log(townNew)
+//console.log(new Date("2020-04-01"));
+
+//console.log(new Date());
