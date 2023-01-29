@@ -48,19 +48,47 @@
  *? с таким именем, ценой и количеством из объекта
  */
 
- const stones = [
-  { name: "Изумруд", price: 1300, quantity: 4 },
-  { name: "Бриллиант", price: 2700, quantity: 6 },
-  { name: "Сапфир", price: 400, quantity: 7 },
-  { name: "Щебень", price: 150, quantity: 100 },
-];
+//const stones = [
+// { name: "Изумруд", price: 1300, quantity: 4 },
+// { name: "Бриллиант", price: 2700, quantity: 6 },
+// { name: "Сапфир", price: 400, quantity: 7 },
+// { name: "Щебень", price: 150, quantity: 100 },
+//;
+//
+//
+//onst calcTotalPrice = (stones, stonesName) => {
+//
+// for (const stone of stones) {
+//   if (stonesName === stone.name)
+//   return stone.price * stone.quantity;
+// }
+//
+//onsole.log(calcTotalPrice(stones, "Бриллиант"));
 
 
-const calcTotalPrice = (stones, stonesName) => {
+/**
+ *? Создайте объект calculator с тремя методами
+ *? read(a, b) - принимает два аргумента и сохраняет их
+ *? как свойства объекта
+ *? sum() возвращает сумму сохраненных значений
+ *? multiply() перемножает сохраненные значения и возвращает результат
+ */
 
-  for (const stone of stones) {
-    if (stonesName === stone.name)
-    return stone.price * stone.quantity;
+const calculator = {
+  read(a, b) {
+    this.vel1 = a;
+    this.vel2 = b
+  },
+  sum() { 
+    return this.vel1 + this.vel2
+  },
+  multiply() {
+    return this.vel1 * this.vel2
   }
 }
-console.log(calcTotalPrice(stones, "Бриллиант"));
+ 
+calculator.read(2, 5);
+calculator.sum()
+console.log(calculator.sum());
+console.log(calculator.multiply());
+console.log(calculator)
