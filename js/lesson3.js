@@ -72,32 +72,79 @@
  */
 
 
-class Client {
-    #email;
-    #login;
-    constructor(email, login) {
-        this.#email = email;
-        this.#login = login;
-    }
-    get getEmail() {
-        return this.#email;
-    }
-    get getLogin() {
-        return this.#login;
+// class Client {
+//     #email;
+//     #login;
+//     constructor(email, login) {
+//         this.#email = email;
+//         this.#login = login;
+//     }
+//     get getEmail() {
+//         return this.#email;
+//     }
+//     get getLogin() {
+//         return this.#login;
+//     }
+
+//     set setEmail(newEmail) {
+//         this.#email = newEmail;
+//     }
+
+//     set setLogin(newLogin) {
+//         this.#login = newLogin;
+//     }
+
+
+// }
+// const newClient = new Client("vasea@gmail.com", "vasea")
+
+// console.log(newClient.setEmail = "ususu");
+
+// console.log(newClient);
+
+
+
+// Создать класс Worker, обладающий свойствами name, age, salary.
+//У класса Worker есть метод getSalary.
+//Создать класс TopLevelWorker, у которого есть свойство hierarchyLevel
+//и наследующий класс Worker, добавляя метод getHierarchyLevel
+
+const HIERARCHY_LEVEL = {
+  TOP: "top",
+  BOTTOM: "bottom",
+};
+
+const workerObj = {
+  name: "Mango",
+  age: 30,
+  salary: 5000,
+};
+
+class Worker {
+    constructor({ name, age, salary }) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
     }
 
-    set setEmail(newEmail) {
-        this.#email = newEmail;
+    getSalary() {
+        return this.salary;
     }
-
-    set setLogin(newLogin) {
-        this.#login = newLogin;
-    }
-
-
 }
-const newClient = new Client("vasea@gmail.com", "vasea")
 
-console.log(newClient.setEmail = "ususu");
+class TopLevelWorker extends Worker {
+  constructor(level, { name, age, salary }) {
+    super({ name, age, salary });
+    this.hierarchyLevel = level;
+  }
+    getHierarchyLevel() {
+      return this.hierarchyLevel;
+  }
+}
 
-console.log(newClient);
+const alex = new Worker({name:"Alex", age:30, salary: 10000});
+console.log(alex);
+console.log(alex.getSalary());
+
+const topAlex = new TopLevelWorker(HIERARCHY_LEVEL.TOP, workerObj);
+console.log(topAlex);
