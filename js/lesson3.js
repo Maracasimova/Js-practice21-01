@@ -61,3 +61,43 @@
 // console.log(frutsItems.addItems("kiwi"));
 
 // console.log(frutsItems.getItems());
+
+
+
+/**
+ *? Напиши класс Client создающий объект
+ *? со свойствами login email
+ *? Объяви частные свойства #login #email,
+ *? доступ к которым сделай через геттер и сеттер login email
+ */
+
+
+class Client {
+    #email;
+    #login;
+    constructor(email, login) {
+        this.#email = email;
+        this.#login = login;
+    }
+    get getEmail() {
+        return this.#email;
+    }
+    get getLogin() {
+        return this.#login;
+    }
+
+    set setEmail(newEmail) {
+        this.#email = newEmail;
+    }
+
+    set setLogin(newLogin) {
+        this.#login = newLogin;
+    }
+
+
+}
+const newClient = new Client("vasea@gmail.com", "vasea")
+
+console.log(newClient.setEmail = "ususu");
+
+console.log(newClient);
